@@ -58,10 +58,10 @@ window.addEventListener('scroll', () => {
 window.addEventListener('scroll', () => {
     let current = '';
     const sections = document.querySelectorAll('section');
+    const currentPage = location.pathname.split('/').pop() || 'index.html';
     
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         
         if (pageYOffset >= sectionTop - 200) {
             current = section.getAttribute('id');
@@ -69,11 +69,11 @@ window.addEventListener('scroll', () => {
     });
     
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.style.color = '#6f1e51';
-            link.style.borderBottom = '2px solid #d4a373';
-        }
+        const href = link.getAttribute('href');
+        const isCurrentSection = href === `#${current}`;
+        const isCurrentPage = href === currentPage;
+
+        link.classList.toggle('active', isCurrentSection || isCurrentPage);
     });
 });
 
@@ -96,6 +96,10 @@ document.querySelectorAll('.language-item').forEach(item => {
 // Typewriter effect for hero subtitle
 function typeWriter() {
     const subtitle = document.querySelector('.hero-content .subtitle');
+    if (!subtitle) {
+        return;
+    }
+
     const text = subtitle.textContent;
     subtitle.textContent = '';
     
