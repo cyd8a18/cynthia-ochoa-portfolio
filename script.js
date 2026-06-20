@@ -70,10 +70,15 @@ window.addEventListener('scroll', () => {
     
     document.querySelectorAll('.nav-links a').forEach(link => {
         const href = link.getAttribute('href');
+        const isHomeSection = currentPage === 'index.html' && href === '#home';
         const isCurrentSection = href === `#${current}`;
         const isCurrentPage = href === currentPage;
 
-        link.classList.toggle('active', isCurrentSection || isCurrentPage);
+        link.classList.toggle('active', isHomeSection || isCurrentSection || isCurrentPage);
+    });
+
+    document.querySelectorAll('.section-nav a').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
     });
 });
 
