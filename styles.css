@@ -1,12 +1,15 @@
 :root {
-    --primary-color: #6f1e51;
+    --primary-color: #d946ef;
     --secondary-color: #d4a373;
-    --accent-color: #f4e4c1;
-    --dark-bg: #1a1a1a;
-    --light-bg: #f8f9fa;
-    --text-dark: #222;
-    --text-light: #666;
-    --border-color: #e0e0e0;
+    --accent-color: #f5d0fe;
+    --dark-bg: #08060d;
+    --light-bg: #181022;
+    --surface-bg: #21152d;
+    --surface-elevated: #2b1a3a;
+    --text-dark: #f7eefc;
+    --text-light: #c8b8d1;
+    --border-color: #3d294f;
+    --shadow-color: rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -23,7 +26,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: white;
+    background-color: var(--dark-bg);
 }
 
 .container {
@@ -34,8 +37,9 @@ body {
 
 /* Navigation */
 .navbar {
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(8, 6, 13, 0.94);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 14px var(--shadow-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -72,14 +76,14 @@ body {
 }
 
 .nav-links a.nav-projects {
-    color: #0f766e;
+    color: #7dd3fc;
     font-weight: 700;
 }
 
 .nav-links a.nav-projects:hover,
 .nav-links a.nav-projects.active {
-    color: #0f766e;
-    border-bottom: 2px solid #0f766e;
+    color: #7dd3fc;
+    border-bottom: 2px solid #7dd3fc;
 }
 
 .nav-links a.active {
@@ -98,10 +102,10 @@ body {
     flex-direction: column;
     gap: 0.35rem;
     padding: 0.8rem;
-    background-color: rgba(255, 255, 255, 0.94);
+    background-color: rgba(33, 21, 45, 0.94);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 20px var(--shadow-color);
 }
 
 .section-nav a {
@@ -149,7 +153,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #8b2e5f 100%);
+    background: linear-gradient(135deg, #3b0a52 0%, #6f1e72 58%, #a21caf 100%);
     color: white;
     padding: 100px 20px;
     text-align: center;
@@ -198,7 +202,7 @@ body {
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 18px var(--shadow-color);
 }
 
 .btn-secondary {
@@ -208,7 +212,7 @@ body {
 }
 
 .btn-secondary:hover {
-    background-color: white;
+    background-color: var(--text-dark);
     color: var(--primary-color);
 }
 
@@ -275,11 +279,11 @@ section h2::after {
 }
 
 .stat {
-    background: white;
+    background: var(--surface-bg);
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px var(--shadow-color);
     transition: transform 0.3s ease;
 }
 
@@ -309,7 +313,7 @@ section h2::after {
 
 /* Experience Section */
 .experience {
-    background-color: white;
+    background-color: var(--dark-bg);
 }
 
 .timeline {
@@ -353,7 +357,7 @@ section h2::after {
     width: 16px;
     height: 16px;
     background-color: var(--primary-color);
-    border: 3px solid white;
+    border: 3px solid var(--dark-bg);
     border-radius: 50%;
     box-shadow: 0 0 0 3px var(--primary-color);
 }
@@ -439,16 +443,16 @@ section h2::after {
 }
 
 .skill-category {
-    background: white;
+    background: var(--surface-bg);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px var(--shadow-color);
     transition: all 0.3s ease;
 }
 
 .skill-category:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px var(--shadow-color);
 }
 
 .skill-category h3 {
@@ -487,7 +491,7 @@ section h2::after {
 
 /* Projects Section */
 .projects {
-    background-color: white;
+    background-color: var(--dark-bg);
 }
 
 .projects-page {
@@ -504,7 +508,7 @@ section h2::after {
     background: var(--light-bg);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px var(--shadow-color);
     border-left: 5px solid var(--primary-color);
 }
 
@@ -537,7 +541,7 @@ section h2::after {
 }
 
 .project-publication {
-    background-color: white;
+    background-color: var(--surface-bg);
     border-left: 4px solid var(--secondary-color);
     border-radius: 8px;
     margin-bottom: 2rem;
@@ -587,7 +591,7 @@ section h2::after {
 
 /* Publications Section */
 .publications {
-    background-color: white;
+    background-color: var(--dark-bg);
 }
 
 .publications-content {
@@ -632,6 +636,15 @@ section h2::after {
     line-height: 1.6;
 }
 
+.publication-title a {
+    color: inherit;
+    text-decoration-color: var(--secondary-color);
+}
+
+.publication-title a:hover {
+    color: var(--accent-color);
+}
+
 .publication-venue {
     color: var(--text-light);
     font-size: 0.95rem;
@@ -639,7 +652,7 @@ section h2::after {
 
 /* Languages Section */
 .languages {
-    background-color: white;
+    background-color: var(--dark-bg);
 }
 
 .language-grid {
@@ -686,10 +699,10 @@ section h2::after {
 }
 
 .education-item {
-    background: white;
+    background: var(--surface-bg);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px var(--shadow-color);
     border-left: 5px solid var(--primary-color);
 }
 
@@ -748,7 +761,7 @@ section h2::after {
 
 /* Achievements Section */
 .achievements {
-    background-color: white;
+    background-color: var(--dark-bg);
 }
 
 .achievements-grid {
@@ -758,18 +771,18 @@ section h2::after {
 }
 
 .achievement-card {
-    background: linear-gradient(135deg, var(--light-bg), white);
+    background: linear-gradient(135deg, var(--surface-bg), var(--surface-elevated));
     padding: 2.5rem;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px var(--shadow-color);
     transition: all 0.3s ease;
     border-top: 4px solid var(--primary-color);
 }
 
 .achievement-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 .achievement-icon {
@@ -797,7 +810,7 @@ section h2::after {
 
 /* Contact Section */
 .contact {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #8b2e5f 100%);
+    background: linear-gradient(135deg, #3b0a52 0%, #6f1e72 58%, #a21caf 100%);
     color: white;
 }
 
