@@ -86,10 +86,8 @@ window.addEventListener('scroll', () => {
 const skillObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const proficiencyBar = entry.target.querySelector('.proficiency');
-            if (proficiencyBar) {
-                proficiencyBar.style.transition = 'width 0.8s ease';
-            }
+            entry.target.classList.add('is-visible');
+            skillObserver.unobserve(entry.target);
         }
     });
 }, { threshold: 0.5 });
